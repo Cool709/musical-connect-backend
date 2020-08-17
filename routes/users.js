@@ -17,7 +17,7 @@ router.get('/test', (req, res) => {
 
 // STRETCH: SEARCH FOR USERS VIA SEARCH BAR
 router.get('/search', (req, res) => {
-    User.findOne({name: req.body.name})
+    User.findOne({name: req.body.email})
     .then(searchedUser => {
         if (!searchedUser) {
             res.send('no user by that name, please try again')
