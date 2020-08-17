@@ -30,15 +30,10 @@ router.get('/search', (req, res) => {
     })
 })
 
-router.get('/teachers', (req, res) => {
-  User.find({})
+rrouter.get('/teachers', (req, res) => {
+  User.find({isTeacher:"True"})
     .then(teachers => {
-      if (User.isTeacher == "True") {
-        res.send(teachers)
-      }
-      else {
-        res.send('No Teachers at this time.')
-      }
+        res.json(teachers)
     }) .catch(error => {
       res.send({message: 'Server error, please try again'})
       console.log(error)
