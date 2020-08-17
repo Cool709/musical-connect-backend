@@ -53,6 +53,7 @@ require('./config/passport')(passport)
 
 //  setup out routes
 app.use('/users', users)
+app.use('/stripe', stripe)
 
 
 
