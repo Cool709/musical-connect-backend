@@ -30,7 +30,7 @@ router.get('/search', (req, res) => {
     })
 })
 
-rrouter.get('/teachers', (req, res) => {
+router.get('/teachers', (req, res) => {
   User.find({isTeacher:"True"})
     .then(teachers => {
         res.json(teachers)
