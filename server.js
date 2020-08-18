@@ -9,6 +9,7 @@ const app = express()
 
 //  require router
 const users = require('./routes/users')
+const stripe = require('./routes/stripe.ts')
 
 //  middleware to CORS requests
 app.use(function(req, res, next) {
