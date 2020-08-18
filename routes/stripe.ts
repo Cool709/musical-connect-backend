@@ -1,6 +1,3 @@
-import { AnyNsRecord } from "dns"
-import { stringify } from "querystring"
-
 require("dotenv").config()
 const bodyParser = require('body-parser')
 const express = require("express")
