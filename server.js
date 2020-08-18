@@ -9,6 +9,7 @@ const app = express()
 
 //  require router
 const users = require('./routes/users')
+const stripe = require('./dist/stripe')
 
 //  middleware to CORS requests
 app.use(function(req, res, next) {
@@ -53,6 +54,7 @@ require('./config/passport')(passport)
 
 //  setup out routes
 app.use('/users', users)
+app.use('/stripe', stripe)
 
 
 
