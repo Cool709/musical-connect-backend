@@ -17,7 +17,7 @@ router.get('/test', (req, res) => {
 
 // STRETCH: SEARCH FOR USERS VIA SEARCH BAR
 router.get('/search', (req, res) => {
-    User.findOne({name: req.body.email})
+    User.findOne({name: "test@test.com"})
     .then(searchedUser => {
         if (!searchedUser) {
             res.send('no user by that name, please try again')
@@ -55,20 +55,16 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 // GET api/users/register (Public)
 router.post('/register', (req, res) => {
   // Find User By Email
-  User.findOne({ email: "test@test.com" })
+  User.findOne({ email: req.body.email })
     .then(user => {
       if(user) {
         return res.status(400).json({email: 'Email already exists'});
       } else {
-        if (avatar = null) {
           avatar = gravatar.url(req.body.email, {
           s: '200', // avatar size option
           r: 'pg', // avatar rating option
           d: 'mm', // default avatar option
           });
-        } else {
-          avatar = req.body.avatar
-        }
         // Get avatar from Gravatar
         
         // Create new user
