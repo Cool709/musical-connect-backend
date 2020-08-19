@@ -60,18 +60,23 @@ router.post('/register', (req, res) => {
       if(user) {
         return res.status(400).json({email: 'Email already exists'});
       } else {
-        // Get avatar from Gravatar
-        const avatar = gravatar.url(req.body.email, {
+        if (avatar = null) {
+          avatar = gravatar.url(req.body.email, {
           s: '200', // avatar size option
           r: 'pg', // avatar rating option
           d: 'mm', // default avatar option
-        });
+          });
+        } else {
+          avatar = req.body.avatar
+        }
+        // Get avatar from Gravatar
+        
 
         // Create new user
         const newUser = new User({
           name: req.body.name,
           email: req.body.email,
-          avatar: req.body.avatar,
+          avatar,
           password: req.body.password,
           isTeacher: req.body.isTeacher,
           bio: req.body.bio,
