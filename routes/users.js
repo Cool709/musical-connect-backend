@@ -55,7 +55,7 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 // GET api/users/register (Public)
 router.post('/register', (req, res) => {
   // Find User By Email
-  User.findOne({ email: req.body.email })
+  User.findOne({ email: "test@test.com" })
     .then(user => {
       if(user) {
         return res.status(400).json({email: 'Email already exists'});
@@ -71,7 +71,6 @@ router.post('/register', (req, res) => {
         }
         // Get avatar from Gravatar
         
-
         // Create new user
         const newUser = new User({
           name: req.body.name,
