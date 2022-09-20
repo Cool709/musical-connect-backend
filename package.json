@@ -1,5 +1,5 @@
 {
-  "name": "help-wanted-backend",
+  "name": "musical-connect-backend",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,16 +10,6 @@
     "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zbarovsky/help-wanted-backend.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zbarovsky/help-wanted-backend/issues"
-  },
-  "homepage": "https://github.com/zbarovsky/help-wanted-backend#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
